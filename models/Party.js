@@ -10,6 +10,10 @@ Party.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+      references: {
+        model: 'character',
+        key: 'char_id'
+      }
     },
     name: {
       type: DataTypes.STRING,
