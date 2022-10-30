@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require("sequelize");
-const { INTEGER } = require("sequelize");
 const sequelize = require("../config/connection");
 
 class Character extends Model {}
@@ -15,6 +14,10 @@ Character.init(
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model:'user',
+        key: 'user_id'
+      }
     },
     first_name: {
       type: DataTypes.STRING,
@@ -65,6 +68,10 @@ Character.init(
     },
     party_id: {
       type: DataTypes.INTEGER,
+      references: {
+        model:'party',
+        key: 'party_id'
+      }
     },
     active: {
       type: DataTypes.BOOLEAN,
