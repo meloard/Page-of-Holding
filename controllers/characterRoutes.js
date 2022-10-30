@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Character = require('../../models/character');
+const Character = require('../models/character');
 
 router.get('/', async (req, res) => {
     try {
