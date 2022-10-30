@@ -10,4 +10,8 @@ router.use('/character', characterRoutes);
 router.use('/party', partyRoutes);
 router.use('/invetory', inventoryRoutes);
 
+fetch(
+    "https://www.dnd5eapi.co/api/classes"
+)
+
 module.exports = router;
