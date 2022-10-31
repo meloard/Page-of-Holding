@@ -2,17 +2,30 @@ const path = require("path");
 const express = require("express");
 const router = require("express").Router();
 const sequelize = require('./controllers');
+const exphbs = require('express-handlebars');
+const app = express();
+const {engine} = require('express-handlebars');
 
+app.use(express.static('public'));
 
-app.engine('handlebars', expbs())
+app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars');
 
-//routing
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', { 
+    title: 'PageofHolding',
+    style: 'home.css',
+  });
 });
 
-const app = express();
+app.get('/userLogin', (req, res) => {
+  res.render('userLogin', { 
+    title: 'User Login',
+    style: 'user.css'
+  })
+})
+
+
 const PORT = process.env.PORT || 3030;
 
 app.use(express.json());
