@@ -32,7 +32,7 @@ router.get('/:id', async (req, res) => {
     }
   });
 
-  router.put('/:id', async (req, res) => {
+  router.put('/:char_id', async (req, res) => {
     try{
       const updateCharData = await Character.update({
         first_name: req.body.first_name,
