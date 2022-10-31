@@ -17,7 +17,7 @@ router.get('/:id', async (req, res) => {
         res.status(404).json({ message: 'Party does not exist' });
         return;
       }
-      res.status(200).json(userData);
+      res.status(200).json(partyData);
     } catch (err) {
       res.status(500).json({ message: 'no party found' });
     }
