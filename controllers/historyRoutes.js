@@ -47,3 +47,5 @@ router.get('/:id', async (req, res) => {
       res.status(400).json({msg: 'Something went wrong. Please try again.'});
     };
   });
+
+  module.exports = router;
