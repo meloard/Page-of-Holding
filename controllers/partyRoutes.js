@@ -23,4 +23,27 @@ router.get('/:id', async (req, res) => {
     }
   });
 
-  module.exports = router
+  router.post('/', async (req, res) => {
+    try{
+      const partyData = await Party.create(req.body);
+      res.status(200).json({msg: `Your party was created!`});
+    }catch(err){
+      res.status(400).json({msg:'Something went wrong. Please try again.'});
+    }
+  });
+
+  router.put('/:party_id', async (req, res) => {
+    try{
+      const updatePartyData = await Party.update({...req.body},
+      {
+        where: {
+          party_id:req.params.party_id
+        }
+      }
+      );
+    }catch(err){
+      res.status(400).json({msg: 'Something went wrong. Please try again.'});
+    };
+  });
+
+  module.exports = router;
