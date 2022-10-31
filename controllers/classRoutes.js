@@ -22,3 +22,12 @@ router.get('/:id', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  router.post('/', async (req, res) => {
+    try{
+      const classData = await Class.create(req.body);
+      res.status(200).json({msg: `${this.first_name} was created!`});
+    }catch(err){
+      res.status(400).json({msg:'Something went wrong. Please try again.'});
+    }
+  });

@@ -22,3 +22,31 @@ router.get('/:id', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  router.post('/', async (req, res) => {
+    try{
+      const characterData = await Character.create(req.body);
+      res.status(200).json({msg: `${this.first_name} was created!`});
+    }catch(err){
+      res.status(400).json({msg:'Something went wrong. Please try again.'});
+    }
+  });
+
+  router.put('/:id', async (req, res) => {
+    try{
+      const updateCharData = await Character.update({
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        level: req.body.level,
+        hit_points: req.body.hit_points
+      },
+      {
+        where: {
+          char_id:req.params.char_id
+        }
+      }
+      );
+    }catch(err){
+      res.status(400).json({msg: 'Something went wrong. Please try again.'});
+    };
+  });
