@@ -1,0 +1,15 @@
+#parent{
+    display: flex;
+
+}
+#name{
+    background-color:cornflowerblue;
+    /* width:500px; */
+    justify-content: center;
+}
+#fname{
+    justify-content: flex-start;
+}
+#lname{
+    justify-content: flex-end;
+}
