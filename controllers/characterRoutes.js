@@ -34,12 +34,7 @@ router.get('/:id', async (req, res) => {
 
   router.put('/:char_id', async (req, res) => {
     try{
-      const updateCharData = await Character.update({
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        level: req.body.level,
-        hit_points: req.body.hit_points
-      },
+      const updateCharData = await Character.update({...req.body},
       {
         where: {
           char_id:req.params.char_id

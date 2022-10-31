@@ -34,10 +34,7 @@ router.get('/:id', async (req, res) => {
 
   router.put('/:party_id', async (req, res) => {
     try{
-      const updatePartyData = await Party.update({
-        name: req.body.name,
-        DM: req.body.DM
-      },
+      const updatePartyData = await Party.update({...req.body},
       {
         where: {
           party_id:req.params.party_id
@@ -50,4 +47,3 @@ router.get('/:id', async (req, res) => {
   });
 
   module.exports = router;
-  module.exports = router
