@@ -1,8 +1,10 @@
+
 const path = require("path");
 const express = require("express");
 const router = require("express").Router();
 const sequelize = require('./controllers');
 const exphbs = require('express-handlebars');
+
 const app = express();
 const {engine} = require('express-handlebars');
 
@@ -28,9 +30,9 @@ app.get('/userLogin', (req, res) => {
 
 const PORT = process.env.PORT || 3030;
 
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-  app.listen(PORT, () => console.log(`Server running at localhost:${PORT}`));
-
+  app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
