@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/character.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="stats">
+    <label for="hp">HP<input class="stat" name="hp" type="number" {{#POST}}{{character.hit_points}}{{/POST}}></label>
+    <label for="lvl">Level<input class="stat" name="lvl" type="number" {{#POST}}{{character.level}}{{/POST}}></label>
+    </div>
+<div id="parent"><!--parent-->
+
+    <div id="name">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="fname"{{#POST}}{{character.first_name}}{{/POST}}>
+        <p><label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lname" {{#POST}}{{character.last_name}}{{/POST}}></p>
+    </div>
+</div><!--parent-->
+<div class="stats">
+    <p><label for="str">STR<input class="stat" type="number" name="str" {{#POST}}{{character.strength}}{{/POST}}></label>
+    <label for="int">INT<input class="stat" type="number" name="int"{{#POST}}{{character.intelligence}}{{/POST}}></label></p>
+    <p><label for="dex">DEX<input class="stat" type="number" name="dex" {{#POST}}{{character.dexterity}}{{/POST}}></label>
+    <label for='wis'>WIS<input class="stat" type="number" name="wis" {{#POST}}{{character.wisdom}}{{/POST}}></label></p>
+    <p><label for="con">CON<input class="stat" type="number" name="con" {{#POST}}{{character.constitution}}{{/POST}}></label>
+     <label for="cha">CHA<input class="stat" type="number" name="cha"></label></p>
+</div>
+<div>
+    <p><label for="race">Race<input type="text" name="race" {{#POST}}{{character.race}}{{/POST}}></label></p>
+    <p><label for="class">Class<input type="text" name="class" {{#POST}}{{character.class}}{{/POST}}></label></p>
+</div>
+
+
+</body>
+</html>
