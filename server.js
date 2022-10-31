@@ -1,7 +1,16 @@
 const path = require("path");
 const express = require("express");
 const router = require("express").Router();
-const sequelize = require('./controllers')
+const sequelize = require('./controllers');
+
+
+app.engine('handlebars', expbs())
+app.set('view engine', 'handlebars');
+
+//routing
+app.get('/', (req, res) => {
+  res.render('index');
+});
 
 const app = express();
 const PORT = process.env.PORT || 3030;
