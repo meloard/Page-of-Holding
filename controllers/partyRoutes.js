@@ -22,3 +22,5 @@ router.get('/:id', async (req, res) => {
       res.status(500).json({ message: 'no party found' });
     }
   });
+
+  module.exports = router
