@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Party extends Model {}
 
@@ -11,24 +11,27 @@ Party.init(
       primaryKey: true,
       autoIncrement: true,
       references: {
-        model: 'character',
-        key: 'char_id'
-      }
+        model: "character",
+        key: "char_id",
+      },
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     DM: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
     },
-},
+    email: {
+      type: DataTypes.STRING,
+    },
+  },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'party',
+    modelName: "party",
   }
 );
 
