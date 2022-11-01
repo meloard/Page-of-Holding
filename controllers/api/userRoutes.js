@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { restore } = require('../models/user');
-const User = require('../models/user');
+const { restore } = require('../../models/user');
+const User = require('../../models/user');
 
 router.get('/', async (req, res) => {
     try {
