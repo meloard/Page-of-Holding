@@ -1,16 +1,19 @@
 const router = require("express").Router();
 const { User, Character } = require("../models");
 
-router.get('/', async (req, res) => {
-  res.render('homepage');
+router.get("/", async (req, res) => {
+  res.render("homepage");
 });
 
-router.get('/user/:id', async (req, res) => {
-    try {
-      const currChar = await Character.findByPk(req.param.id)
-      }
-      res.render("charMain", currChar);}
-    
+router.get("/user/:id", async (req, res) => {
+  try {
+    const currChar = await Character.findByPk(req.param.id);
+    res.render("charMain", currChar);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get("/user/:id", async (req, res) => {
   try {
     const charList = await Character.findByPk(req.params.id);
@@ -21,6 +24,4 @@ router.get("/user/:id", async (req, res) => {
   }
 });
 
-
-module.exports=router;
-
+module.exports = router;
