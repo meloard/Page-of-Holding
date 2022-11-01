@@ -1,7 +1,21 @@
-<section class = 'row members' id="members">
-    <section class = "col firstnm" id=""firstnm">
-
+<section class="container-fluid">
+<section class = 'row cols-4 members' id="members">
+    <section class = "col name" id="name">
+            {{first_name}}{{last_name}} 
     </section>
-    
-        {{first_name}} {{last_name}} {{race_val}} {{level}} {{class}}<
+    <section class="col race" id="race">
+            {{race_val}}
+        </section>
+    <section class="col level" id="level">
+        <p>Level {{level}}</p>
+    </section>  
+    <section class="col charclass" id="class">
+            {{char_class}}
+    </section>
+    <section class="col hp" id="hp">
+        <p>Hitpoints: {{hp}}</p>
+    </section>
+</section>
+</section>
+
     
