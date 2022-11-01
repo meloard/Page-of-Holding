@@ -1,19 +1,9 @@
 const router = require("express").Router();
 
+const apiRoutes = require("./api");
+const homeRoutes = require("./home-routes.js");
 
-const charRoutes = require('./characterRoutes');
-router.use('/Character', charRoutes );
-
-const classRoutes = require('./classRoutes');
-router.use('/Class', classRoutes);
-
-const inventoryRoutes = require('./inventoryRoutes');
-router.use('/Inventory', inventoryRoutes);
-
-const partyRoutes = require('./partyRoutes');
-router.use('/Party', partyRoutes);
-
-const userRoutes = require('./userRoutes');
-router.use('/User', userRoutes);
+router.use("/", homeRoutes);
+router.use("/api", apiRoutes);
 
 module.exports = router;
